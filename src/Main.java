@@ -1,23 +1,25 @@
-import java.io.*;
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-import java.util.*;
-import java.util.regex.Pattern;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main {
-    /**
-     * 操作符
-     */
-    public static final String PLUS = "+";
-    public static final String MINUS = "-";
-    public static final String TIMES = "*";
-    public static final String DIVISION_SIGN = "/";
-    public static final String UNDO = "undo";
-    public static final String SQRT = "sqrt";
-    public static final String CLEAR = "clear";
+    private int counter=0;
+    private void recur(){
+        counter++;
+        recur();//递归
+    }
+    public void getStackDepth(){
+        try {
+            recur();
+        }catch (Throwable t){
+            System.out.println("栈最大深度："+counter);
+            t.printStackTrace();
+        }
 
-    public static void main(String[] args) {
+    }
+
+    public static void main(String[] args){
+        Main stack=new Main();
+        stack.getStackDepth();
 
     }
 }
