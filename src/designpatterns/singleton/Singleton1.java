@@ -1,4 +1,4 @@
-package design_patterns.singleton;
+package designpatterns.singleton;
 
 /**
  * 单例模式代码实现（懒汉式--用的时候才去实例他）

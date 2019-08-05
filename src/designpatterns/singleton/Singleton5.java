@@ -1,4 +1,4 @@
-package design_patterns.singleton;
+package designpatterns.singleton;
 
 /**
  * 单例模式代码实现（枚举方法）

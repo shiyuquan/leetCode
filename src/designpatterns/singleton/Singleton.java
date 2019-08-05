@@ -1,4 +1,4 @@
-package design_patterns.singleton;
+package designpatterns.singleton;
 
 /**
  * 单例的实现（饿汉式--系统加载就单例了）

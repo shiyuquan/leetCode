@@ -1,25 +1,15 @@
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import designpatterns.staticfactorymethod.OperateFactory;
+import designpatterns.staticfactorymethod.TwoNumOper;
 
+/**
+ * @author shiyuquan
+ */
 public class Main {
-    private int counter=0;
-    private void recur(){
-        counter++;
-        recur();//递归
-    }
-    public void getStackDepth(){
-        try {
-            recur();
-        }catch (Throwable t){
-            System.out.println("栈最大深度："+counter);
-            t.printStackTrace();
-        }
-
+    public static void main(String[] args) throws Exception {
+        TwoNumOper o = OperateFactory.createOper("+");
+        o.num1 = 1;
+        o.num2 = 2;
+        System.out.println(o.caculate());
     }
 
-    public static void main(String[] args){
-        Main stack=new Main();
-        stack.getStackDepth();
-
-    }
 }
