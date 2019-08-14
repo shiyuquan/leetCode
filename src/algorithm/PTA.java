@@ -1,5 +1,5 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+package algorithm;
+
 import java.util.*;
 
 /**

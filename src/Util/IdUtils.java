@@ -1,29 +1,40 @@
+package Util;
+
 /**
- * @Author shiyuquan
- * @Date 2018/11/12 11:08
- * @Description TODO
+ * @author shiyuquan
+ * Create Time: 2018/11/12 11:08
  */
 public class IdUtils {
     private long workerId;
     private long datacenterId;
     private long sequence = 0L;
-    private long twepoch = 1288834974657L;                              //  Thu, 04 Nov 2010 01:42:54 GMT
-    private long workerIdBits = 5L;                                     //  节点ID长度
-    private long datacenterIdBits = 5L;                                 //  数据中心ID长度
-    private long maxWorkerId = -1L ^ (-1L << workerIdBits);             //  最大支持机器节点数0~31，一共32个
-    private long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);     //  最大支持数据中心节点数0~31，一共32个
-    private long sequenceBits = 12L;                                    //  序列号12位
-    private long workerIdShift = sequenceBits;                          //  机器节点左移12位
-    private long datacenterIdShift = sequenceBits + workerIdBits;       //  数据中心节点左移17位
-    private long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits; //  时间毫秒数左移22位
-    private long sequenceMask = -1L ^ (-1L << sequenceBits);                          //  4095
+    /** Thu, 04 Nov 2010 01:42:54 GMT */
+    private long twepoch = 1288834974657L;
+    /** 节点ID长度 */
+    private long workerIdBits = 5L;
+    /** 数据中心ID长度 */
+    private long datacenterIdBits = 5L;
+    /** 最大支持机器节点数0~31，一共32个 */
+    private long maxWorkerId = -1L ^ (-1L << workerIdBits);
+    /** 最大支持数据中心节点数0~31，一共32个 */
+    private long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);
+    /** 序列号12位 */
+    private long sequenceBits = 12L;
+    /** 机器节点左移12位 */
+    private long workerIdShift = sequenceBits;
+    /** 数据中心节点左移17位 */
+    private long datacenterIdShift = sequenceBits + workerIdBits;
+    /** 时间毫秒数左移22位 */
+    private long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
+    /** 4095 */
+    private long sequenceMask = -1L ^ (-1L << sequenceBits);
     private long lastTimestamp = -1L;
 
     private static class IdGenHolder {
         private static final IdUtils instance = new IdUtils();
     }
 
-    public static IdUtils get(){
+    public static IdUtils get() {
         return IdGenHolder.instance;
     }
 

@@ -1,6 +1,9 @@
-import org.omg.PortableInterceptor.INACTIVE;
+package algorithm;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * @Author shiyuquan
@@ -137,9 +140,9 @@ public class LeetCode {
      * 归并两个有序链表
      */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2){
-        if (l1 == null && l2 == null) return null;
-        if (l1 == null) return l2;
-        if (l2 == null) return l1;
+        if (l1 == null && l2 == null) { return null;}
+        if (l1 == null) { return l2; }
+        if (l2 == null) { return l1; }
         if(l1.val < l2.val){
             l1.next = mergeTwoLists(l1.next, l2);
             return l1;
@@ -155,9 +158,11 @@ public class LeetCode {
      */
     public static int removeDuplicates(int[] nums) {
         int i = nums.length > 0 ? 1 : 0;
-        for(int n: nums)
-            if(n > nums[i-1])
+        for(int n: nums) {
+            if (n > nums[i - 1]) {
                 nums[i++] = n;
+            }
+        }
         return i;
     }
 

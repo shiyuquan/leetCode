@@ -19,5 +19,6 @@ public class Main {
         /** ----------------- 一个有二技能的、有一技能的、技能英雄 -- 凯 -------------------- **/
         Hero hero = new SecondSkill(new FirstSkill(new HeroSkill(new Kai())));
         hero.learnSkill();
+
     }
 }

@@ -1,3 +1,5 @@
+package algorithm;
+
 /**
  * @Author shiyuquan
  * @Date 2018/9/26 10:25
