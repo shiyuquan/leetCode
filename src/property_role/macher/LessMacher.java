@@ -14,6 +14,9 @@ public class LessMacher implements Matcher{
      */
     @Override
     public boolean match(Object source, Object targit) {
+        if (null == targit) {
+            return false;
+        }
         if (targit instanceof Long) {
             Long l1 = Long.valueOf(source.toString());
             Long l2 = (Long) targit;

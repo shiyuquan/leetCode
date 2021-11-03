@@ -5,7 +5,7 @@ package designpatterns.singleton;
  *
  * 天然线程安全，可防止反射生成实例。
  *
- * @author shiyuquan
+ * @author shiyuquan≤
  * Create Time: 2019/6/17 16:31
  */
 public class Singleton5 {
@@ -15,7 +15,7 @@ public class Singleton5 {
         return Singleton.INSTANCE.getInstance();
     }
 
-    private static enum Singleton {
+    private enum Singleton {
         INSTANCE;
 
         private Singleton5 singleton5;

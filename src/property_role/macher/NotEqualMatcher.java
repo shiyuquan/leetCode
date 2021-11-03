@@ -14,8 +14,6 @@ public class NotEqualMatcher implements Matcher {
      */
     @Override
     public boolean match(Object source, Object targit) {
-        String s1 = source.toString();
-        String s2 = targit.toString();
-        return !s1.equals(s2);
+        return !new EqualsMatcher().match(source, targit);
     }
 }

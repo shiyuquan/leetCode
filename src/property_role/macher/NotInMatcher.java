@@ -14,6 +14,6 @@ public class NotInMatcher implements Matcher {
      */
     @Override
     public boolean match(Object source, Object targit) {
-        return false;
+        return !new InMatcher().match(source, targit);
     }
 }

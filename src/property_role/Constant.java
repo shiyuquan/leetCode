@@ -2,6 +2,8 @@ package property_role;
 
 public class Constant {
 
+    private Constant() {}
+
     public static final char lc = '(';
     public static final char rc = ')';
     public static final char dqm = '\"';

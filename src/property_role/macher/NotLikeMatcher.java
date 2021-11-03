@@ -14,8 +14,6 @@ public class NotLikeMatcher implements Matcher{
      */
     @Override
     public boolean match(Object source, Object targit) {
-        String s1 = source.toString();
-        String s2 = targit.toString();
-        return !s1.contains(s2);
+        return !new LikeMatcher().match(source, targit);
     }
 }

@@ -14,6 +14,9 @@ public class EqualsMatcher implements Matcher {
      */
     @Override
     public boolean match(Object source, Object targit) {
+        if (null == targit) {
+            return false;
+        }
         String s1 = source.toString();
         String s2 = targit.toString();
         return s1.equals(s2);
