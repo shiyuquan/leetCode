@@ -110,7 +110,7 @@ public class BlegLinkedBlockingQueue<E> extends AbstractQueue<E>
      */
     static class Node<E> {
         /** The item, volatile to ensure barrier separating write and read */
-        // TODO 变动 添加了 volatile
+        // TODO 变动 添加了 volatile 意义在哪
         volatile E item;
         Node<E> next;
         Node(E x) { item = x; }
@@ -482,9 +482,7 @@ public class BlegLinkedBlockingQueue<E> extends AbstractQueue<E>
         } finally {
             takeLock.unlock();
         }
-        // TODO 原来是 ==
-        // 这里原来是 == 的判断，因为容量可变，这里改为 >=。原有的逻辑因为队列满了，
-        // 添加操作会被阻断，所以在清空的时候唤醒添加线程。
+        // TODO 原来是 == 没懂这里的判读是做什么用的...
         if (c >= capacity)
             signalNotFull();
         return x;
@@ -551,8 +549,6 @@ public class BlegLinkedBlockingQueue<E> extends AbstractQueue<E>
             takeLock.unlock();
         }
         // TODO 变更 原来的是 == 为什么有这个判断呢？
-        // 这里原来是 == 的判断，因为容量可变，这里改为 >=。原有的逻辑因为队列满了，
-        // 添加操作会被阻断，所以在清空的时候唤醒添加线程。
         if (c >= capacity)
             signalNotFull();
         return x;
